@@ -5,6 +5,7 @@
 // @description  Panel dodatków na Sigma Interfejs
 // @author       Kuchar
 // @match        https://*.margonem.pl/*
+// @exclude      https://margonem.pl/
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/Oskirrix/GarbatyPanelDodatk-w/main/GarbatyPanel.user.js
 // @downloadURL  https://raw.githubusercontent.com/Oskirrix/GarbatyPanelDodatk-w/main/GarbatyPanel.user.js
