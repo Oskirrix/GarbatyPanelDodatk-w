@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Garbaty Panel Dodatków
 // @namespace    http://tampermonkey.net/
-// @version      4.8
+// @version      4.9
 // @description  Panel dodatków na Sigma Interfejs
 // @author       Kuchar
 // @match        https://*.margonem.pl/*
