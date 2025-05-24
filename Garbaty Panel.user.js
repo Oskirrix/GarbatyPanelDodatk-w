@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Garbaty Panel Dodatków
-// @version      5.0
+// @version      5.1
 // @description  Panel dodatków na Sigma Interfejs
 // @author       Kuchar
 // @match        https://*.margonem.pl/*
