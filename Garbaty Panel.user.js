@@ -3,8 +3,8 @@
 // @version      5.6
 // @description  Panel dodatków na Sigma Interfejs
 // @author       Kuchar
-// @match        https://*.margonem.pl/*
-// @exclude      https://margonem.pl/
+// @match        https://gordion.margonem.pl/*
+// @match        https://experimental.margonem.pl/*
 // @grant        none
 // @icon         https://cdn-icons-png.freepik.com/512/4594/4594548.png
 // @updateURL    https://github.com/Oskirrix/GarbatyPanelDodatk-w/raw/refs/heads/main/Garbaty%20Panel.user.js
