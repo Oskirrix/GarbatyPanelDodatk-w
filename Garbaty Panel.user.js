@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Garbaty Panel Dodatków
 // @version      6.9
-// @description  Bezpieczny loader Garbatego Panelu
+// @description  Loader Garbatego Panelu
 // @author       Kuchar
 // @match        https://*.margonem.pl/*
 // @exclude      https://margonem.pl/
