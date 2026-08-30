@@ -1,0 +1,45 @@
+name: Reobfuscate loader
+
+on:
+  push:
+    paths:
+      - '.github/scripts/reobfuscate-loader.js'
+      - '.github/workflows/reobfuscate-loader.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  obfuscate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install obfuscator
+        run: npm install --no-save javascript-obfuscator@4.1.1
+
+      - name: Re-obfuscate userscript
+        run: node .github/scripts/reobfuscate-loader.js
+
+      - name: Validate userscript syntax
+        run: node --check 'Garbaty Panel.user.js'
+
+      - name: Verify version and hidden update block
+        run: |
+          grep -q '@version      6.10.5' 'Garbaty Panel.user.js'
+          grep -q '"requiredVersion": "6.10.5"' loader-version.json
+          if tail -n +25 'Garbaty Panel.user.js' | grep -q '__GARBATY_VERSION_URL__'; then
+            echo 'Update checker is still visible'
+            exit 1
+          fi
+
+      - name: Commit loader 6.10.5
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 'Garbaty Panel.user.js' loader-version.json
+          git commit -m 'release: loader 6.10.5 reobfuscated'
+          git push
